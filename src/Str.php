@@ -32,6 +32,14 @@ class Str
         return trim(strtolower(preg_replace('/([0-9a-z])(?=[A-Z])/u', '$1'.$separator, $title)), $separator);
     }
 
+    public static function camel($title) {
+        $title = static::normalize($title);
+        $title = trim(preg_replace('/[^0-9a-zA-Z]+/', ' ', $title));
+        return lcfirst(preg_replace_callback('/\s(.)/u', function($match) {
+            return strtoupper($match[1]);
+        }, $title));
+    }
+
     public static function build_url(...$args) {
         $data = [];
         while (($next = array_shift($args)) || count($args)) {
