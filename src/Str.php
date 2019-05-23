@@ -16,19 +16,20 @@ class Str
      */
     protected static $dotCache = [];
 
-    public static function normalice($cadena)
+    public static function normalize($cadena)
     {
         $replacer = [
-            'ÀÁÂÃÄÅÆÞÇÐÈÉÊËÌÍÎÏÑÒÓÔÕÖØŔÙÚÛÜÝàáâãäåæþçðèéêëìíîïñòóôõöøŕùúûýýÿαβßπ',
-            'AAAAAAABCDEEEEIIIINOOOOOORUUUUYaaaaaaabcdeeeeiiiinooooooruuuyyyabbp',
+            'ÀÁÂÃÄÅÆÞÇÐÈÉÊËÌÍÎÏÑÒÓÔÕÖØÙÚÛÜÝàáâãäåæþçðèéêëìíîïñòóôõöøùúûýýÿß',
+            'AAAAAAABCDEEEEIIIINOOOOOOUUUUYaaaaaaabcdeeeeiiiinoooooouuuyyyb',
         ];
-        return strtr($cadena, $replacer[0], $replacer[1]);
+        return strtr(utf8_decode($cadena), utf8_decode($replacer[0]), $replacer[1]);
     }
 
-    public static function dot($title, $separator = '.') {
-        $title = static::normalice($title);
-        $title = preg_replace('/[^0-9a-za-Z]+/', $separator, $title);
-        return strtolower(preg_replace('/([^0-9a-zA-Z])(?=[A-Z])/u', '$1'.$separator, $title));
+    public static function dot($title, $separator = null) {
+        $separator or $separator = '.';
+        $title = static::normalize($title);
+        $title = preg_replace('/[^0-9a-zA-Z]+/', $separator, $title);
+        return trim(strtolower(preg_replace('/([0-9a-z])(?=[A-Z])/u', '$1'.$separator, $title)), $separator);
     }
 
     public static function build_url(...$args) {
