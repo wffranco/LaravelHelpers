@@ -1,6 +1,6 @@
 <?php
 
-namespace Wffranco\Roles;
+namespace Wffranco\Helpers;
 
 use Illuminate\Support\Str as Lstr;
 
