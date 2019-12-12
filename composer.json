@@ -1,6 +1,6 @@
 {
     "name": "wffranco/laravel-helpers",
-    "description": "Package for handling roles and permissions in Laravel 5.8+",
+    "description": "Some helpers for Laravel 5.*",
     "keywords": ["helpers", "dot", "andor", "orand", "laravel"],
     "license": "MIT",
     "authors": [
@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "laravel/framework": ">=5.0"
     },
     "autoload": {
         "psr-0": {

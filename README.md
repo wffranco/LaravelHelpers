@@ -15,14 +15,8 @@ Pull this package in through Composer (file `composer.json`).
 
 ```js
 {
-    "repositories": [
-        {
-            "url": "git@github.com:wffranco/laravel-helpers.git",
-            "type": "vcs"
-        }
-    ],
     "require": {
-        "wffranco/laravel-helpers": "dev-master"
+        "wffranco/laravel-helpers": "~1.0"
     }
 }
 ```
