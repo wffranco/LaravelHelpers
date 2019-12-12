@@ -2,13 +2,10 @@
 
 namespace Wffranco\Helpers;
 
-use Illuminate\Support\Str as Lstr;
-use Illuminate\Support\Traits\Macroable;
+use Illuminate\Support\Str as SupportStr;
 
-class Str
+class Str extends SupportStr
 {
-    use Macroable;
-
     /**
      * The cache of snake-cased words.
      *
