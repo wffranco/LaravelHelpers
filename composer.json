@@ -10,12 +10,12 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
-        "laravel/framework": ">=5.0"
+        "php": "^7.0",
+        "laravel/framework": "^5.2"
     },
     "autoload": {
         "psr-4": {
-            "Wffranco\\Helpers": "src/"
+            "Wffranco\\Helpers\\": "src/"
         },
         "files": [
             "helpers.php"

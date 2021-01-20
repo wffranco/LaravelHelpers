@@ -2,9 +2,9 @@
 
 namespace Wffranco\Helpers;
 
-use Illuminate\Support\Str as SupportStr;
+use Illuminate\Support\Str as BaseStr;
 
-class Str extends SupportStr
+class Str extends BaseStr
 {
     /**
      * The cache of snake-cased words.
